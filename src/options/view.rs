@@ -40,6 +40,7 @@ impl Mode {
                     table: Some(TableOptions::deduce(matches, vars)?),
                     header: matches.has(&flags::HEADER)?,
                     xattr: xattr::ENABLED && matches.has(&flags::EXTENDED)?,
+                    icons: matches.has(&flags::ICONS)?,
                 })
             }
         };
@@ -59,6 +60,7 @@ impl Mode {
                         table: None,
                         header: false,
                         xattr: xattr::ENABLED && matches.has(&flags::EXTENDED)?,
+                        icons: matches.has(&flags::ICONS)?,
                     };
 
                     Ok(Mode::Details(details))
@@ -81,6 +83,7 @@ impl Mode {
                     table: None,
                     header: false,
                     xattr: xattr::ENABLED && matches.has(&flags::EXTENDED)?,
+                    icons: matches.has(&flags::ICONS)?,
                 };
 
                 Ok(Mode::Details(details))
